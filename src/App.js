@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import {Home, ProductDetails} from './pages';
-import {Sidebar, CartItem, Footer, Header, Hero, Product} from './components';
+import {Sidebar, Footer, Header} from './components';
 
 function App() {
   return (
