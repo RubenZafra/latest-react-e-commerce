@@ -19,7 +19,7 @@ const Home = () => {
       <>
         {isLoading ? (
           <div className="h-screen flex justify-center items-center">
-            <InfinitySpin />
+            <InfinitySpin color='#222222'/>
           </div>
         ) : (
           <div onClick={handleClose} className="h-full py-12">

@@ -13,11 +13,14 @@ const ProductProvider = ({children}) => {
     setIsLoading(true);
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://fakestoreapi.com/products');
-        const data = await response.json();
-        setIsLoading(false)
-        setProducts(data);
-      } catch(err) {
+        setTimeout(async () => {       
+          const response = await fetch('https://fakestoreapi.com/products');
+          const data = await response.json();
+          setIsLoading(false)
+          setProducts(data);
+        }, 2000);
+      } 
+      catch(err) {
         setError(err)
         console.log(error);
       }

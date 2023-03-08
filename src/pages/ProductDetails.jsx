@@ -15,13 +15,14 @@ const ProductDetails = () => {
 
   if (!product) {
     return (
-    <section className="h-screen fledx justify-center items-center ">
+    <section className="h-screen flex justify-center items-center ">
       Loading...
     </section>
     )
   }
 
   const {title, price, description, image} = product
+  
     return (
       <section className="pt-32 pb-12 lg:py-32 h-screen flex items-center  ">
         <div className="container mx-auto">
