@@ -29,8 +29,8 @@ const CartItem = ({item}) => {
                 <IoMdClose className="text-gray-500 hover:text-red-500 transition"/>
               </div>
             </div>
-            <div className="bg-pink-200 flex gap-x-2 h-[36px] text-sm">
-              <div className="flex flex-1 max-w-[100px] bg-blue-400 items-center h-full
+            <div className="bg-pink-100 flex gap-x-2 h-[36px] text-sm">
+              <div className="flex flex-1 max-w-[100px] bg-blue-300 items-center h-full
                border text-primary font-medium">
                 <div onClick={()=>subtractAmount(id)} className="flex-1 h-full flex justify-center items-center cursor-pointer">
                   <IoMdRemove />
@@ -44,7 +44,7 @@ const CartItem = ({item}) => {
               <div className="flex-1 flex items-center justify-around">
                 {price} €
               </div>
-              <div className="flex-1 flex justify-end items-center text-primary font-medium">
+              <div className="flex-1 flex justify-end items-center text-primary font-medium px-4">
                 {`${parseFloat(price * amount).toFixed(2)} €`}
               </div>
             </div>

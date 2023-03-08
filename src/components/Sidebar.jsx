@@ -14,6 +14,7 @@ const Sidebar = () => {
   const {cart, clearCart, total, itemAmount} = useContext(CartContext)
 
   return (
+ 
     <div className={`${
       isOpen ? 'right-0' : '-right-full'
     } w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw]
@@ -37,8 +38,8 @@ const Sidebar = () => {
         return <CartItem item={item} key={item.id}/>
       })}
       </div>
-      <div className="bg-pink-200 flex flex-col gap-y-3 py-4 mt-4 ">
-        <div className="bg-pink-200 flex w-full justify-between items-center">
+      <div className="bg-pink-100 flex flex-col gap-y-3 py-4 mt-4 px-4">
+        <div className="bg-pink-100 flex w-full justify-between items-center">
           <div className="uppercase font-semibold ">
             <span className="mr-2 ">Total:</span> {parseFloat(total).toFixed(2)} €
           </div>
@@ -52,6 +53,7 @@ const Sidebar = () => {
         </div>
       </div>
     </div>
+  
   )
 }
 
