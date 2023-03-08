@@ -7,7 +7,7 @@ import { useContext } from "react";
 
 const CartItem = ({item}) => {
 
-  const {removeFromCart, addAmount} = useContext(CartContext)
+  const {removeFromCart, addAmount, subtractAmount} = useContext(CartContext)
 
    
   const {id, title, image, price, amount} = item;
@@ -32,7 +32,7 @@ const CartItem = ({item}) => {
             <div className="bg-pink-200 flex gap-x-2 h-[36px] text-sm">
               <div className="flex flex-1 max-w-[100px] bg-blue-400 items-center h-full
                border text-primary font-medium">
-                <div className="flex-1 h-full flex justify-center items-center cursor-pointer">
+                <div onClick={()=>subtractAmount(id)} className="flex-1 h-full flex justify-center items-center cursor-pointer">
                   <IoMdRemove />
                 </div>
                 <div className="h-full flex justify-center items-center px-2">{amount}</div>
