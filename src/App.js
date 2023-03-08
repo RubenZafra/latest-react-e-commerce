@@ -1,22 +1,15 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-import {Home, ProductDetails} from './pages';
-import {Sidebar, Footer, Header} from './components';
+import { ProductProvider, SidebarProvider, CartProvider } from './contexts';
+import RouterPath from './routes/RouterPath';
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/product/:id' element={<ProductDetails />} />
-        </Routes>
-        <Sidebar />
-        <Footer />
-      </Router>
-
-    </div>
+    <SidebarProvider>
+      <CartProvider>
+        <ProductProvider>
+          <RouterPath />
+        </ProductProvider>
+      </CartProvider>
+    </SidebarProvider>
   );
 }
 
