@@ -16,7 +16,7 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      window.scrollY > 60 ? setIsActive(true) : setIsActive(false)
+      window.scrollY > 80 ? setIsActive(true) : setIsActive(false)
     })
   })
   
@@ -30,7 +30,6 @@ const Header = () => {
               <img className="w-[250px]" src={Logo} alt="" />
             </div>
           </Link>
-
           <div onClick={()=>setIsOpen(!isOpen)} className="cursor-pointer flex relative
           max-w-[50px]"
           >
