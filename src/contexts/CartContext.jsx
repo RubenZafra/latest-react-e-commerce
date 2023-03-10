@@ -1,11 +1,28 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import { toast } from "react-toastify";
+
+import { AuthContext } from '../contexts/AuthContext';
 
 export const CartContext = createContext()
 
+
+
 const CartProvider = ({children}) => {
 
-  const getDataLocalStorage = localStorage.getItem('cart-items')
+  const {authState} = useContext(AuthContext)
+
+  const user = authState.user;
+  let getDataLocalStorage = localStorage.getItem(`cart-items-${user}`)
+
+  useEffect(() => {
+    if(authState.isAuthenticated){
+      getDataLocalStorage = localStorage.getItem(`cart-items-${authState.user}`)
+    } else {
+      getDataLocalStorage = localStorage.getItem(`cart-items`)
+    }
+    setCart(getDataLocalStorage ? JSON.parse(getDataLocalStorage) : [])
+  }, [authState.user])
+  
 
   const [cart, setCart] = useState(
     getDataLocalStorage ? JSON.parse(getDataLocalStorage) : []
@@ -33,7 +50,7 @@ const CartProvider = ({children}) => {
 
   useEffect(() => {
     const json = JSON.stringify(cart);
-    localStorage.setItem('cart-items', json)
+    authState.user ? localStorage.setItem(`cart-items-${user}`, json) : localStorage.setItem(`cart-items`, json)
   }, [cart])
 
   const addToCart = (product, id) => {

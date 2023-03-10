@@ -1,11 +1,18 @@
 import React, { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 
 const Login = () => {
 
+  const navigate = useNavigate()
+
   const users = [
     {
       username: "Ruben", 
+      password: "1234"
+    },
+    {
+      username: "Antonio", 
       password: "1234"
     }
   ]
@@ -28,14 +35,15 @@ const Login = () => {
     e.preventDefault();
     if(users.find(item => item.username === user) && users.find(item => item.password === pass)){
       loginSuccess(user, pass)
+      navigate('/')
     } else {
       loginError('Invalid Username/Password');
     }
   }
 
-  const {authState, loginSuccess, loginError, logout} = useContext(AuthContext)
+  const {authState, loginSuccess, loginError} = useContext(AuthContext)
 
-
+  console.log(authState)
     
   return (
     <div className='h-screen flex items-center justify-center'>

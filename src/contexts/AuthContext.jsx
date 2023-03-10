@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 export const AuthContext = createContext();
 
- 
+ const getUserLocalStorage = localStorage.getItem('userAuth')
 
 const AuthProvider = ({children}) => {
 
@@ -15,9 +15,9 @@ const AuthProvider = ({children}) => {
     }
 
     const initialValue = {
-        user: "", 
-        password: "", 
-        isAuthenticated: false, 
+        user: getUserLocalStorage ? JSON.parse(getUserLocalStorage).username : '', 
+        password: getUserLocalStorage ? JSON.parse(getUserLocalStorage).password : '', 
+        isAuthenticated: getUserLocalStorage ? JSON.parse(getUserLocalStorage).isAuthenticated : '', 
         error: ""
     }
 
@@ -50,7 +50,7 @@ const AuthProvider = ({children}) => {
     const loginSuccess = useCallback((username, password) => {
         dispatch({type: ACTIONS.LOGIN_SUCCESS, payload: {username, password}})
         toast.success("Login Successful!")
-        localStorage.setItem("userAuth", JSON.stringify({username, password}))
+        localStorage.setItem("userAuth", JSON.stringify({username, password, isAuthenticated: true}))
     }, [])
     
     const loginError = useCallback((errormsg) => {
