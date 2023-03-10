@@ -105,9 +105,6 @@ const CartProvider = ({children}) => {
     
   }
 
-  // const json = JSON.stringify(cart);
-  // localStorage.setItem('cart-items', json)
-
   return (
     <CartContext.Provider 
       value={{

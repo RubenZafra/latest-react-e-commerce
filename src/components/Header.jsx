@@ -6,6 +6,7 @@ import {CartContext} from '../contexts/CartContext'
 import {BsBag} from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import Logo from '../img/ollo-logo.avif'
+import { AuthContext } from "../contexts/AuthContext";
 
 const Header = () => {
 
@@ -13,6 +14,7 @@ const Header = () => {
 
   const {isOpen, setIsOpen} = useContext(SidebarContext);
   const {itemAmount} = useContext(CartContext)
+  const {logout} = useContext(AuthContext)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -30,14 +32,23 @@ const Header = () => {
               <img className="w-[250px]" src={Logo} alt="" />
             </div>
           </Link>
-          <div onClick={()=>setIsOpen(!isOpen)} className="cursor-pointer flex relative
-          max-w-[50px]"
-          >
-            <BsBag className="text-2xl font-semibold text-white"/>
-            <div className="bg-pink-300 absolute -right-2 -bottom-2 
-            text-[12px] w-[18px] h-[18px] text-white rounded-full
-            flex justify-center items-center">{itemAmount}</div>
+          <div className="flex justify-around gap-8">
+            <div>
+              <Link className="text-white" to={'/login'}>Login</Link>
+            </div>
+            <div>
+              <button className="text-white" onClick={()=>logout()}>Logout</button>
+            </div>
+            <div onClick={()=>setIsOpen(!isOpen)} className="cursor-pointer flex relative
+            max-w-[50px]"
+            >
+              <BsBag className="text-2xl font-semibold text-white"/>
+              <div className="bg-pink-300 absolute -right-2 -bottom-2 
+              text-[12px] w-[18px] h-[18px] text-white rounded-full
+              flex justify-center items-center">{itemAmount}</div>
+            </div>
           </div>
+            
         </div>
       </header>
     )
