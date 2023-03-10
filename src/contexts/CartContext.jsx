@@ -63,11 +63,13 @@ const CartProvider = ({children}) => {
 
     if (cartItem) {
       const newCart = [...cart].map(item => {
+
         if (item.id === id){
           return {...item, amount: cartItem.amount + 1};
         } else {
           return item;
         }
+        
       })
       setCart(newCart)
       toast.success('Added +1!', {
