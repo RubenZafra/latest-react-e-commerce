@@ -1,3 +1,12 @@
+`#React` `#Javascript` `#JSON` `#API` `#TailWindCSS` `#ReactRouter` `#ReactToastify` `#ReactIcons` `#ReactLoaderSpinner`
+
+# React e-commerce 
+
+## Index 
+
+- [Available Scripts](#available-scripts)
+- [Technologies Used](#technologies-used)
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -14,14 +23,14 @@ You may also see any lint errors in the console.
 
 Installs everything needed
 
-## Technologies Used:
+## Technologies Used
 
-### React (useState, useReducer, useEffect, useContext,...)
-### React Router v6
-### Create React App
-### Tailwind CSS
-### React Toastify
-### React Icons
-### React Loader Spinner  
+#### React (useState, useReducer, useEffect, useContext,...)
+#### React Router v6
+#### Create React App
+#### Tailwind CSS
+#### React Toastify
+#### React Icons
+#### React Loader Spinner  
 
 
