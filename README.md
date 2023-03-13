@@ -7,6 +7,7 @@
 - [Available Scripts](#available-scripts)
 - [Technologies Used](#technologies-used)
 - [Features](#features)
+- [Users](#users)
 
 ## Available Scripts
 
@@ -37,6 +38,18 @@ When you click in the cart icon it appears a sidebar containing all the products
 All of this shows you different toats with the beautiful `React-Toastify` library to indicate that everything went as expected or if there's any error. <br><br>
 
 All design is made with Tailwind CSS with some overwritten features. 
+
+## Users Available
+
+Currently there are only 2 users available to show the different carts. And the credentials are these: <br>
+<br>
+User: `Ruben`
+Pass: `1234`
+<br>
+<br>
+User: `Antonio`
+Pass: `1234`
+<br>
 
 ## Technologies Used 👨‍💻
 
