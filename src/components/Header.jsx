@@ -14,7 +14,7 @@ const Header = () => {
 
   const {isOpen, setIsOpen} = useContext(SidebarContext);
   const {itemAmount} = useContext(CartContext)
-  const {logout} = useContext(AuthContext)
+  const {logout, authState} = useContext(AuthContext)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -33,12 +33,20 @@ const Header = () => {
             </div>
           </Link>
           <div className="flex justify-around gap-8">
-            <div>
-              <Link className="text-white" to={'/login'}>Login</Link>
-            </div>
-            <div>
-              <button className="text-white" onClick={()=>logout()}>Logout</button>
-            </div>
+            {authState.isAuthenticated ? 
+            <>
+              <div>
+                <button className="text-white" onClick={()=>logout(authState.user)}>Logout</button>
+              </div>
+            </>
+            :
+            <>
+              <div>
+                <Link className="text-white" to={'/login'}>Login</Link>
+              </div>
+            </>
+
+            }
             <div onClick={()=>setIsOpen(!isOpen)} className="cursor-pointer flex relative
             max-w-[50px]"
             >

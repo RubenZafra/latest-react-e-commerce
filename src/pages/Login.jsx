@@ -41,9 +41,7 @@ const Login = () => {
     }
   }
 
-  const {authState, loginSuccess, loginError} = useContext(AuthContext)
-
-  console.log(authState)
+  const {loginSuccess, loginError} = useContext(AuthContext)
     
   return (
     <div className='h-screen flex items-center justify-center'>

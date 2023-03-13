@@ -49,7 +49,8 @@ const AuthProvider = ({children}) => {
 
     const loginSuccess = useCallback((username, password) => {
         dispatch({type: ACTIONS.LOGIN_SUCCESS, payload: {username, password}})
-        toast.success("Login Successful!")
+        toast.success(`Login Successful! 
+        Welcome back, ${username}!`)
         localStorage.setItem("userAuth", JSON.stringify({username, password, isAuthenticated: true}))
     }, [])
     
@@ -61,7 +62,7 @@ const AuthProvider = ({children}) => {
     }, [])
 
     const logout = useCallback(() => {
-        toast.success("Logout Successful!")
+        toast.success(`Logout Successful! We will miss you... 😔`)
         localStorage.removeItem("userAuth")
         dispatch({type: ACTIONS.LOGOUT})
     }, [])

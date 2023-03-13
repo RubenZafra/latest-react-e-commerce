@@ -12,6 +12,7 @@ const Home = () => {
   const {products, isLoading} = useContext(ProductContext);
   const {handleClose} = useContext(SidebarContext)
 
+
   const [filterInput, setFilterInput] = useState('')
     
   const handleFilterInput = ({target}) => {
