@@ -24,7 +24,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-## Description 💻
+## Description 💻
 
 In this project I learnt how to implement different react Hooks, create Routes to navigate through pages with React Router Dom and use the Local Storage to be able to save each user cart. It adds a different "key" for each user (`cart-items-"user"`) and loads each cart depending on the user logged. <br><br>
 
