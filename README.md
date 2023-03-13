@@ -39,6 +39,9 @@ You may also see any lint errors in the console.
 
 ### Home
 
+![SCR-20230313-ke6](https://user-images.githubusercontent.com/90968035/224719490-9da39100-b2dd-46cb-b88d-b8e1e8c8e271.jpeg)
+
+
 ### Login
 
 ### Cart/Sidebar
